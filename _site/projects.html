@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -151,7 +151,7 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./projects.html" aria-current="page"> 
@@ -182,55 +182,67 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-project-listing">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-project-listing">
 <div class="listing-actions-group">
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-Title
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-file-modified-sort="1765144843707" data-listing-reading-time-sort="2" data-listing-word-count-sort="350" data-listing-title-sort="Project 1 -- Predicting Global Healthy Life Expectancy" data-listing-filename-sort="01-project.qmd">
-<td>
-<a href="./projects/01-project.html" class="title listing-title">Project 1 – Predicting Global Healthy Life Expectancy</a>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-file-modified-sort="1765144833881" data-listing-reading-time-sort="3" data-listing-word-count-sort="593" data-listing-title-sort="Project 2 -- The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations" data-listing-filename-sort="02-project.qmd">
-<td>
-<a href="./projects/02-project.html" class="title listing-title">Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations</a>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-file-modified-sort="1765144871263" data-listing-reading-time-sort="4" data-listing-word-count-sort="628" data-listing-title-sort="Project 3 -- Predicting Skin Cancer Status" data-listing-filename-sort="03-project.qmd">
-<td>
-<a href="./projects/03-project.html" class="title listing-title">Project 3 – Predicting Skin Cancer Status</a>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-file-modified-sort="1765144873118" data-listing-reading-time-sort="4" data-listing-word-count-sort="630" data-listing-title-sort="Project 4 -- Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors" data-listing-filename-sort="04-project.qmd">
-<td>
-<a href="./projects/04-project.html" class="title listing-title">Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors</a>
-</td>
-
-</tr>
-
-</tbody>
-</table>
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1765147163183" data-listing-reading-time-sort="2" data-listing-word-count-sort="350">
+<a href="./projects/01-project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/images/Project1.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Project 1 – Predicting Life Expectancy
+</h5>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1765147177418" data-listing-reading-time-sort="3" data-listing-word-count-sort="593">
+<a href="./projects/02-project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/images/Project2.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations
+</h5>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1765147172415" data-listing-reading-time-sort="4" data-listing-word-count-sort="628">
+<a href="./projects/03-project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/images/Project3.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Project 3 – Predicting Skin Cancer Status
+</h5>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1765147168975" data-listing-reading-time-sort="4" data-listing-word-count-sort="630">
+<a href="./projects/04-project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/images/Project4.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors
+</h5>
+</div>
+</div></a>
+</div>
+</div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

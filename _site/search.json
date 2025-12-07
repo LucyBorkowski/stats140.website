@@ -79,42 +79,42 @@
   {
     "objectID": "projects/01-project.html",
     "href": "projects/01-project.html",
-    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "title": "Project 1 – Predicting Life Expectancy",
     "section": "",
     "text": "This project develops a statistical modeling framework to quantify how key socioeconomic and well-being indicators influence healthy life expectancy across countries. Using international data from the Gallup World Poll, sourced through the World Happiness Report (143 observations), the analysis investigates whether happiness levels, economic conditions, and perceived government corruption can serve as reliable predictors of population health outcomes."
   },
   {
     "objectID": "projects/01-project.html#project-overview",
     "href": "projects/01-project.html#project-overview",
-    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "title": "Project 1 – Predicting Life Expectancy",
     "section": "",
     "text": "This project develops a statistical modeling framework to quantify how key socioeconomic and well-being indicators influence healthy life expectancy across countries. Using international data from the Gallup World Poll, sourced through the World Happiness Report (143 observations), the analysis investigates whether happiness levels, economic conditions, and perceived government corruption can serve as reliable predictors of population health outcomes."
   },
   {
     "objectID": "projects/01-project.html#technical-approach",
     "href": "projects/01-project.html#technical-approach",
-    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "title": "Project 1 – Predicting Life Expectancy",
     "section": "Technical Approach",
     "text": "Technical Approach\nWe implemented a multiple linear regression framework to model healthy life expectancy as a function of three predictors:\n\nHappiness Score (1–10)\n\nEconomic Well-Being (GDP per capita index)\n\nPerceptions of Corruption (public trust metric)\n\nInitial exploratory analysis showed positive correlations between life expectancy and both happiness and GDP per capita, while corruption showed no meaningful linear relationship. Skewness and several influential observations motivated a transformation-based modeling approach.\nTo address violations of normality and heteroscedasticity, we applied Box–Cox power transformations to the response and predictors. Model diagnostics indicated that individualized transformations significantly improved fit. Variable-selection procedures (Adjusted R², AIC/AICc, BIC, and added-variable plots) identified perceptions of corruption as a non-significant predictor and it was removed from the final specification."
   },
   {
     "objectID": "projects/01-project.html#final-model",
     "href": "projects/01-project.html#final-model",
-    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "title": "Project 1 – Predicting Life Expectancy",
     "section": "Final Model",
     "text": "Final Model\nThe optimized model estimates transformed healthy life expectancy as a function of transformed GDP per capita and happiness score:\n[ ()^{1.43} = -0.0087 + 0.235 ()^2 + 0.038 ()^2 ]\nThe final model explains 72.35% of the variance in healthy life expectancy ((R^2 = 0.7235)) and is statistically significant (ANOVA (p &lt; 0.05)). Both remaining predictors show strong statistical significance and positive effects."
   },
   {
     "objectID": "projects/01-project.html#key-findings",
     "href": "projects/01-project.html#key-findings",
-    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "title": "Project 1 – Predicting Life Expectancy",
     "section": "Key Findings",
     "text": "Key Findings\n\nEconomic prosperity and subjective well-being are strong, quantifiable drivers of healthy life expectancy.\n\nPerceived corruption does not meaningfully predict life expectancy within this dataset.\n\nThe results highlight potential policy levers — improvements in economic conditions and well-being metrics may translate into measurable health gains."
   },
   {
     "objectID": "projects/01-project.html#limitations-future-work",
     "href": "projects/01-project.html#limitations-future-work",
-    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "title": "Project 1 – Predicting Life Expectancy",
     "section": "Limitations & Future Work",
     "text": "Limitations & Future Work\n\nThe study notes potential omitted-variable bias, sensitivity to outliers, and limited generalizability due to the concentration of upper-middle-income countries in the dataset.\n\nFuture extensions include expanding the feature set, applying the model to additional years, and validating performance across more diverse global populations.\n\nPresentation of the project here: 101A Project"
   },
@@ -221,6 +221,6 @@
     "href": "projects.html",
     "title": "",
     "section": "",
-    "text": "Title\n\n\n\n\n\n\n\n\nProject 1 – Predicting Global Healthy Life Expectancy\n\n\n\n\n\n\nProject 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations\n\n\n\n\n\n\nProject 3 – Predicting Skin Cancer Status\n\n\n\n\n\n\nProject 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors\n\n\n\n\n\n\nNo matching items"
+    "text": "Project 1 – Predicting Life Expectancy\n\n\n\n\n\n\n\n\n\n\n\n\nProject 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations\n\n\n\n\n\n\n\n\n\n\n\n\nProject 3 – Predicting Skin Cancer Status\n\n\n\n\n\n\n\n\n\n\n\n\nProject 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors\n\n\n\n\n\nNo matching items"
   }
 ]

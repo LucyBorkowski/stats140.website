@@ -2,6 +2,7 @@
 title: "Project 3 -- Predicting Skin Cancer Status"
 format: html
 toc: false
+image: images/Project3.png
 ---
 
 

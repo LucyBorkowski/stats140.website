@@ -2,6 +2,7 @@
 title: "Project 4 -- Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors"
 format: html
 toc: false
+image: images/Project4.png
 ---
 
 ## Introduction

@@ -1,7 +1,8 @@
 ---
-title: "Project 1 -- Predicting Global Healthy Life Expectancy"
+title: "Project 1 -- Predicting Life Expectancy"
 format: html
 toc: false
+image: images/Project1.png
 ---
 
 ## Project Overview
