@@ -1,11 +1,46 @@
 ---
 title: "Lucy Borkowski"
+about:
+  template: trestles
+  image: profile.pic.png
+  links:
+    - icon: inbox
+      text: Email
+      href: mailto:lucyborkowski54@gmail.com
+    - icon: github
+      text: Github
+      href: https://github.com/LucyBorkowski
+    - icon: linkedin
+      text: LinkedIn
+      href: www.linkedin.com/in/lucy-borkowski
+    
+      
+toc: false
 ---
 
-This is a Quarto website.
+I’m Lucy Borkowski, a fourth year undergraduate Statistics & Data Science student at UCLA. I’m passionate about statistical modeling, computational methods, and using data to understand real-world problems. Through my coursework and projects, I’ve gained experience in regression, linear models, simulation, optimization, and statistical programming in both R and C++.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Outside of academics, I’m involved in Bruin Belles and BruinXR, where I’ve had the chance to take on leadership and outreach roles. I also love traveling, playing soccer, exploring new languages, and finding ways to make a positive impact in my community.
 
-```{r}
-1 + 1
-```
+Download my CV/Resume here: [CV/Resume](/CV.pdf)
+
+## Education
+
+**University of California, Los Angeles (UCLA)** — Los Angeles, CA  
+**B.S. in Statistics & Data Science** (Anticipated 2026)  
+**GPA:** 3.8 / 4.0  
+
+**Needham Broughton High School** — Raleigh, NC  
+**International Baccalaureate & AP Curriculum** (Graduated June 2022)  
+
+
+
+## Experience
+
+**LoanCore Capital** — Commercial Real Estate Finance Intern  
+Los Angeles, CA | June 2025 – August 2025  
+I analyzed financial and market data to evaluate commercial real estate loan risk, supported underwriting and due diligence, built financial models in Excel, and contributed to market and comparable-property research.
+
+**Meals on Wheels** — Director’s Office Intern  
+Raleigh, NC | August 2021 – June 2022  
+I supported the Director by coordinating administrative tasks, managing documentation, and ensuring that time-sensitive projects were completed accurately and efficiently. I also worked closely with the accounting department, assisting with financial documentation, data organization, and other administrative tasks to ensure accuracy and timely completion of projects.
