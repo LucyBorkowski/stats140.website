@@ -1,0 +1,105 @@
+---
+title: "Project 4 -- Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors"
+format: html
+toc: false
+---
+
+## Introduction
+
+Hurricanes form over warm ocean waters when heat and moisture cause rising air, creating low pressure. As air continues to rise and rotate, storms intensify.  
+
+- Lower central pressure → stronger winds  
+- Hurricanes are ranked **Category 1–5** based on sustained wind speed  
+- Predicting which storms will become major hurricanes (Category 3–5) is crucial for emergency planning and saving lives  
+
+## Research Question
+
+To what extent can early meteorological measurements—**wind speed, central pressure, and storm location**—predict whether a tropical hurricane will intensify into a major hurricane?  
+- Which variables are most significant in category prediction?
+
+## Data & Methodology
+
+### Important Variables
+
+- **Pressure:** Lower central pressure indicates stronger storm  
+- **Wind Speed:** Direct measure of intensity  
+- **Track Coordinates (latitude/longitude):** Storm behavior differs by region  
+- **Date:** Seasonal cycles influence intensity  
+- **Category:** Classification based on maximum sustained wind  
+- **Naming Status:** Named storms often reach higher intensity and are monitored more closely  
+
+### Data Cleaning
+
+- Started with ~13,665 storm observations  
+- Removed missing or impossible values (e.g., pressure = 0, wind = 0)  
+- Feature engineered:  
+  - `category` from max wind  
+  - `region` from coordinates  
+  - `hemisphere` from storm ID  
+- Final cleaned dataset: ~12,674 observations  
+
+## Initial Exploratory Analysis
+
+- Visualized distributions of pressure, wind speed, and category  
+- Explored spatial patterns across latitudes and regions  
+- Examined seasonal trends in intensification  
+
+## Modeling
+
+### Model 1: Logistic Regression (Main Effects)
+
+- Predictors: wind speed, pressure, latitude, longitude, region  
+- AIC: 12,435; AUC: 0.797  
+- Threshold 0.5: major hurricane classification ~48%, non-major ~92.7%  
+- Optimal threshold from ROC = 0.336 → balanced accuracy = 0.712  
+- Key insights: Lower pressure & higher wind early → higher odds of major hurricane  
+- Limitation: Under-predicts major hurricanes → nonlinear/interaction effects missed  
+
+### Model 2: Logistic Regression with Interaction Terms
+
+- Added interactions: wind × pressure, wind × latitude  
+- AIC dropped to 12,138; AUC = 0.8055  
+- Optimal threshold = 0.3091  
+- Major hurricane classification improved from 64% → 67%  
+- Balanced accuracy = 0.731  
+- Key takeaway: Interactions capture conditional meteorological effects  
+
+### Model 3: Random Forest
+
+- Predictors: wind speed, pressure, latitude, longitude, region  
+- Motivation: Capture nonlinear patterns & complex interactions missed by logistic regression  
+- Classification performance:  
+  - Major hurricanes: 81.8%  
+  - Non-major: 85%  
+- AUC = 0.911 → substantial improvement over logistic regression  
+
+### Model 4: Random Forest with Interaction Features
+
+- Added engineered interactions from logistic regression Model 2  
+- Captured complex conditional effects  
+- Performance:  
+  - Major hurricanes: 76.6%  
+  - Non-major: 85.8%  
+  - AUC = 0.8994 (slightly lower than simpler RF)  
+- RF already incorporates interactions → added terms slightly redundant  
+
+## Results & Analysis
+
+- **Best performing model:** Random Forest (Model 3)  
+- **Most influential predictors:**  
+  - Wind speed (high wind → higher intensification odds)  
+  - Central pressure (low pressure → higher intensification odds)  
+- **Predictive accuracy:** ~82% for major hurricanes  
+- **AUC:** 0.91 → model reliably separates major vs non-major hurricanes  
+- Early meteorological measurements can predict major hurricane potential with strong confidence  
+
+## Feature & Model Limitations
+
+- Some meteorological factors (e.g., sea surface temperature, humidity) unavailable  
+- Older storm data may be less accurate due to technological limitations  
+- Class imbalance: major hurricanes less common → potential skew in models  
+- Data cleaning may introduce selection bias (removing missing/impossible values)  
+- Logistic regression struggled with nonlin
+
+
+Presentation of the project here: [140XP Project](/140XPproject.pdf)

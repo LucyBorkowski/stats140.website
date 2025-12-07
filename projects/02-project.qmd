@@ -1,6 +1,91 @@
 ---
-title: "Project 2"
+title: "Project 2 -- The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations"
 format: html
+toc: false
 ---
 
-project 2
+
+## Introduction
+
+This study investigates how biological stress responses vary by type of physical activity, and whether these responses are moderated by age and gender in an Islander population. Key questions include:
+
+- Are there gender differences in physical endurance?  
+- Does age correlate with physical endurance in high-exertion tasks (e.g., swimming)?  
+- Are elevated blood hormone (adrenaline and cortisol) levels associated with increased physical activity?  
+- Does type of physical activity influence stress hormone responses?  
+
+## Background & Existing Literature
+
+- **Cortisol and Adrenaline as Coordinated Stress Hormones:** Cortisol regulates energy metabolism, immune function, and exercise adaptation, while adrenaline supports immediate energy and cardiovascular output (Hackney & Walz, 2013).  
+- **Exercise Intensity and Cortisol Response:** Moderate to high intensity exercise (≥60% VO2 max) significantly elevates cortisol; low-intensity exercise (≈40%) produces minimal hormonal response (Hill et al., 2008).  
+- **Physical Activity and Hormonal Health:** Regular exercise reduces cortisol and improves sleep quality; most research is clinical, focusing on women with health conditions (De Nys et al., 2022).  
+- **Age-Related Decline in Physical Activity:** Physical activity decreases by 40–80% with age, increasing chronic disease risk and altering stress hormone responses (Suryadinata et al., 2020).  
+- **Gender Differences in Endurance:** Men generally have higher VO2max, while women excel in pacing, fat utilization, and fatigue resistance (Besson et al., 2022).  
+
+## Methods
+
+### Participants
+
+- N = 90 healthy individuals from the Islander population  
+- Balanced by **gender** (45 males, 45 females) and **age groups** (0–25, 26–50, 51+)  
+
+### Experimental Design
+
+- Open-label, **three-way between-subjects factorial design**  
+- **Independent Variables:**  
+  - Exercise Type: Bungee Jumping, Swimming, Light Jogging  
+  - Age Group: 0–25, 26–50, 51+  
+  - Gender: Male, Female  
+- **Dependent Variables:**  
+  - Change in **adrenaline**, **cortisol**, and **blood oxygen levels** (post-pre)  
+- 18 total groups (2 genders × 3 age groups × 3 activities)  
+- 5 participants per group to maintain balanced design  
+
+### Procedure
+
+- Participants completed one of the three exercises  
+- Blood samples collected **before and after exercise**  
+- Physiological changes computed for stress markers and oxygen levels  
+
+### Sample Size Determination
+
+- Power = 0.80, α = 0.05, effect size = 0.40  
+- Minimum N = 74 (G*Power)  
+- Final N = 90 to ensure balanced groups and independence  
+
+### Data Analysis
+
+- Three-way ANOVA to assess **main effects** and **interactions** of Exercise Type, Age, and Gender  
+- Post-hoc comparisons via **Tukey HSD**  
+- Visual diagnostics with **Residual and Q-Q plots**  
+
+## Results
+
+### ANOVA & MANOVA
+
+- **Gender significantly influenced stress responses:**  
+  - Adrenaline change (p = 0.002)  
+  - Cortisol change (p = 0.036)  
+- **Age effects** were not significant  
+- **Age × Gender interaction** not significant  
+- Blood oxygen levels remained stable across groups  
+
+### Post-Hoc Analysis
+
+- Tukey HSD: Significant gender differences in adrenaline levels (p = 0.002)  
+- Females exhibited **higher post-swimming adrenaline**, especially in age groups 0–25 and 51+  
+
+### Diagnostics
+
+- Residual and Q-Q plots indicated model assumptions largely met  
+- No major violations observed  
+
+## Conclusions
+
+- **Gender is a stronger determinant** of physiological stress response than age in high-exertion activities  
+- **Swimming elicited higher adrenaline responses in females** across age groups  
+- Age does not significantly modify cortisol, adrenaline, or oxygen response in this population  
+- High-intensity exercise in Islander populations highlights gender-specific adaptations in stress physiology  
+
+
+Presentation of the project here: [101B Project](/101Bproject.pdf)

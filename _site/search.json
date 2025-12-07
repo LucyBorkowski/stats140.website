@@ -21,31 +21,206 @@
     "text": "Experience\nLoanCore Capital — Commercial Real Estate Finance Intern\nLos Angeles, CA | June 2025 – August 2025\nI analyzed financial and market data to evaluate commercial real estate loan risk, supported underwriting and due diligence, built financial models in Excel, and contributed to market and comparable-property research.\nMeals on Wheels — Director’s Office Intern\nRaleigh, NC | August 2021 – June 2022\nI supported the Director by coordinating administrative tasks, managing documentation, and ensuring that time-sensitive projects were completed accurately and efficiently. I also worked closely with the accounting department, assisting with financial documentation, data organization, and other administrative tasks to ensure accuracy and timely completion of projects."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "",
+    "objectID": "projects/03-project.html",
+    "href": "projects/03-project.html",
+    "title": "Project 3 – Predicting Skin Cancer Status",
     "section": "",
-    "text": "Title\n\n\n\n\n\n\n\n\nProject 1\n\n\n\n\n\n\nProject 2\n\n\n\n\n\n\nNo matching items"
+    "text": "Skin cancer is the most common cancer in the United States, affecting millions each year:\n\n1 in 5 Americans will develop skin cancer by age 70\n\nOver 2 people die every hour from skin cancer in the U.S.\n\nEarly detection of melanoma greatly increases survival\n\nRisk assessment is challenging manually; machine learning can improve prediction by detecting complex patterns in data"
   },
   {
-    "objectID": "projects.html#project-1",
-    "href": "projects.html#project-1",
-    "title": "",
+    "objectID": "projects/03-project.html#introduction",
+    "href": "projects/03-project.html#introduction",
+    "title": "Project 3 – Predicting Skin Cancer Status",
     "section": "",
-    "text": "Here is my project 1"
+    "text": "Skin cancer is the most common cancer in the United States, affecting millions each year:\n\n1 in 5 Americans will develop skin cancer by age 70\n\nOver 2 people die every hour from skin cancer in the U.S.\n\nEarly detection of melanoma greatly increases survival\n\nRisk assessment is challenging manually; machine learning can improve prediction by detecting complex patterns in data"
   },
   {
-    "objectID": "projects.html#project-2",
-    "href": "projects.html#project-2",
-    "title": "",
-    "section": "Project 2",
-    "text": "Project 2\nHere is my project 2"
+    "objectID": "projects/03-project.html#data-cleaning",
+    "href": "projects/03-project.html#data-cleaning",
+    "title": "Project 3 – Predicting Skin Cancer Status",
+    "section": "Data & Cleaning",
+    "text": "Data & Cleaning\n\nTraining data: 50,000 rows, 50 columns\n\nTesting data: 20,000 rows, 49 predictors\n\nCancer distribution (training): Benign 47.7%, Malignant 52.3%\n\nBaseline accuracy: 52.26%\n\nPredictor types: 49 predictors: 18 numeric, 31 categorical (some numeric represent categories, e.g., outdoor_job, zip_code_last_digit)\n\n\nMissing Data\n\nTraining: 196,042 missing values (7.84%)\n\nTesting: 78,256 missing values (7.99%)\n\nMissingness spread evenly; no predictor &gt;10% missing\n\nImputation methods compared: missForest, MICE, median/mode replacement"
+  },
+  {
+    "objectID": "projects/03-project.html#methodology",
+    "href": "projects/03-project.html#methodology",
+    "title": "Project 3 – Predicting Skin Cancer Status",
+    "section": "Methodology",
+    "text": "Methodology\n\nExplored multiple approaches: LASSO, Elastic Net, stepwise regression, subset selection\n\nMultiple imputation methods tested for missing data\n\nMedian-mode imputation selected for final model due to stability\n\nFocused on statistically significant predictors for final model"
+  },
+  {
+    "objectID": "projects/03-project.html#models",
+    "href": "projects/03-project.html#models",
+    "title": "Project 3 – Predicting Skin Cancer Status",
+    "section": "Models",
+    "text": "Models\n\nRandom Forest\nFull model:\n- Used all 49 predictors\n- Training confusion matrix showed Benign error 51%, Malignant error 33%\n- Tended to classify Malignant better than Benign\n- Kaggle testing accuracy: 59.835%\nReduced 15-predictor model:\n- Selected top 15 important predictors\n- Training confusion matrix: Benign error 55%, Malignant error 35%\n- Performance worse than full model\n- Important features included Age, UV exposure, and Occupation\n\n\nGradient Boosting Machine (GBM)\n\nBernoulli loss for binary classification\n\nHyperparameters tuned:\n\nof trees: 8,000\nInteraction depth: 5\n\nShrinkage: 0.005\n\nMin observations per node: 10\n\nSubsample: 1.0\n\n\n10-fold CV to select optimal # of trees (~2042 trees)\n\nTraining accuracy: ~60.415% on Kaggle\n\nObserved overfitting when too many trees were used\n\n\n\nFinal Model – Logistic Regression\n\nSelected statistically significant predictors (18 total):\n\nDemographics/Environment: Age, Urban_Rural, Years_Lived_At_Address, Skin_Tone\n\nBehavioral/Protective: Hat_Use, Tanning_Bed_Use, Clothing_Protection, Sun_Burns_Last_Year\n\nMedical Risk Factors: Family_History, Immunosuppressed, Skin_Photosensitivity\n\nLesion-specific: Lesion_Location, Number_Of_Lesions\n\nMisc: Music_Genre\n\n\nTraining accuracy: 60.76%\n\nKaggle testing accuracy: 60.545%"
+  },
+  {
+    "objectID": "projects/03-project.html#results-limitations",
+    "href": "projects/03-project.html#results-limitations",
+    "title": "Project 3 – Predicting Skin Cancer Status",
+    "section": "Results / Limitations",
+    "text": "Results / Limitations\n\nLogistic regression improved baseline by ~8%\n\nAdvantages: Simplicity, interpretability, moderate accuracy\n\nLimitations:\n\nMedian/mode imputation may introduce bias\n\nGBM and Random Forest are computationally expensive\n\nModels may overfit if not properly tuned\n\nLogistic regression struggles with non-linear relationships and multicollinearity\n\nRandom seed and train/test split affect reproducibility\n\nSome predictors may appear insignificant due to modeling choices"
+  },
+  {
+    "objectID": "projects/03-project.html#discussion",
+    "href": "projects/03-project.html#discussion",
+    "title": "Project 3 – Predicting Skin Cancer Status",
+    "section": "Discussion",
+    "text": "Discussion\n\nReal-world application: Current models are not clinically reliable (&lt;70% accuracy)\n\nDermatology screening tools achieve &gt;90% accuracy\n\nLogistic regression selected as final model for interpretability\n\nRandom Forest and GBM slightly worse or similar in performance, more complex to interpret\n\nProvides baseline for future research, feature engineering, and model tuning"
+  },
+  {
+    "objectID": "projects/03-project.html#conclusion",
+    "href": "projects/03-project.html#conclusion",
+    "title": "Project 3 – Predicting Skin Cancer Status",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nBest model accuracy: ~60.545%\n\nLogistic regression with 18 significant predictors chosen for final model\n\nModel simplicity and interpretability are key advantages\n\nFurther improvements require richer clinical data, imaging, and medically informed predictors\n\nServes as a solid baseline for future predictive modeling in skin cancer research\n\nPresentation of the project here: 101C Project"
+  },
+  {
+    "objectID": "projects/01-project.html",
+    "href": "projects/01-project.html",
+    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "section": "",
+    "text": "This project develops a statistical modeling framework to quantify how key socioeconomic and well-being indicators influence healthy life expectancy across countries. Using international data from the Gallup World Poll, sourced through the World Happiness Report (143 observations), the analysis investigates whether happiness levels, economic conditions, and perceived government corruption can serve as reliable predictors of population health outcomes."
+  },
+  {
+    "objectID": "projects/01-project.html#project-overview",
+    "href": "projects/01-project.html#project-overview",
+    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "section": "",
+    "text": "This project develops a statistical modeling framework to quantify how key socioeconomic and well-being indicators influence healthy life expectancy across countries. Using international data from the Gallup World Poll, sourced through the World Happiness Report (143 observations), the analysis investigates whether happiness levels, economic conditions, and perceived government corruption can serve as reliable predictors of population health outcomes."
+  },
+  {
+    "objectID": "projects/01-project.html#technical-approach",
+    "href": "projects/01-project.html#technical-approach",
+    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "section": "Technical Approach",
+    "text": "Technical Approach\nWe implemented a multiple linear regression framework to model healthy life expectancy as a function of three predictors:\n\nHappiness Score (1–10)\n\nEconomic Well-Being (GDP per capita index)\n\nPerceptions of Corruption (public trust metric)\n\nInitial exploratory analysis showed positive correlations between life expectancy and both happiness and GDP per capita, while corruption showed no meaningful linear relationship. Skewness and several influential observations motivated a transformation-based modeling approach.\nTo address violations of normality and heteroscedasticity, we applied Box–Cox power transformations to the response and predictors. Model diagnostics indicated that individualized transformations significantly improved fit. Variable-selection procedures (Adjusted R², AIC/AICc, BIC, and added-variable plots) identified perceptions of corruption as a non-significant predictor and it was removed from the final specification."
+  },
+  {
+    "objectID": "projects/01-project.html#final-model",
+    "href": "projects/01-project.html#final-model",
+    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "section": "Final Model",
+    "text": "Final Model\nThe optimized model estimates transformed healthy life expectancy as a function of transformed GDP per capita and happiness score:\n[ ()^{1.43} = -0.0087 + 0.235 ()^2 + 0.038 ()^2 ]\nThe final model explains 72.35% of the variance in healthy life expectancy ((R^2 = 0.7235)) and is statistically significant (ANOVA (p &lt; 0.05)). Both remaining predictors show strong statistical significance and positive effects."
+  },
+  {
+    "objectID": "projects/01-project.html#key-findings",
+    "href": "projects/01-project.html#key-findings",
+    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "section": "Key Findings",
+    "text": "Key Findings\n\nEconomic prosperity and subjective well-being are strong, quantifiable drivers of healthy life expectancy.\n\nPerceived corruption does not meaningfully predict life expectancy within this dataset.\n\nThe results highlight potential policy levers — improvements in economic conditions and well-being metrics may translate into measurable health gains."
+  },
+  {
+    "objectID": "projects/01-project.html#limitations-future-work",
+    "href": "projects/01-project.html#limitations-future-work",
+    "title": "Project 1 – Predicting Global Healthy Life Expectancy",
+    "section": "Limitations & Future Work",
+    "text": "Limitations & Future Work\n\nThe study notes potential omitted-variable bias, sensitivity to outliers, and limited generalizability due to the concentration of upper-middle-income countries in the dataset.\n\nFuture extensions include expanding the feature set, applying the model to additional years, and validating performance across more diverse global populations.\n\nPresentation of the project here: 101A Project"
   },
   {
     "objectID": "projects/02-project.html",
     "href": "projects/02-project.html",
-    "title": "Project 2",
+    "title": "Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations",
     "section": "",
-    "text": "project 2"
+    "text": "This study investigates how biological stress responses vary by type of physical activity, and whether these responses are moderated by age and gender in an Islander population. Key questions include:\n\nAre there gender differences in physical endurance?\n\nDoes age correlate with physical endurance in high-exertion tasks (e.g., swimming)?\n\nAre elevated blood hormone (adrenaline and cortisol) levels associated with increased physical activity?\n\nDoes type of physical activity influence stress hormone responses?"
+  },
+  {
+    "objectID": "projects/02-project.html#introduction",
+    "href": "projects/02-project.html#introduction",
+    "title": "Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations",
+    "section": "",
+    "text": "This study investigates how biological stress responses vary by type of physical activity, and whether these responses are moderated by age and gender in an Islander population. Key questions include:\n\nAre there gender differences in physical endurance?\n\nDoes age correlate with physical endurance in high-exertion tasks (e.g., swimming)?\n\nAre elevated blood hormone (adrenaline and cortisol) levels associated with increased physical activity?\n\nDoes type of physical activity influence stress hormone responses?"
+  },
+  {
+    "objectID": "projects/02-project.html#background-existing-literature",
+    "href": "projects/02-project.html#background-existing-literature",
+    "title": "Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations",
+    "section": "Background & Existing Literature",
+    "text": "Background & Existing Literature\n\nCortisol and Adrenaline as Coordinated Stress Hormones: Cortisol regulates energy metabolism, immune function, and exercise adaptation, while adrenaline supports immediate energy and cardiovascular output (Hackney & Walz, 2013).\n\nExercise Intensity and Cortisol Response: Moderate to high intensity exercise (≥60% VO2 max) significantly elevates cortisol; low-intensity exercise (≈40%) produces minimal hormonal response (Hill et al., 2008).\n\nPhysical Activity and Hormonal Health: Regular exercise reduces cortisol and improves sleep quality; most research is clinical, focusing on women with health conditions (De Nys et al., 2022).\n\nAge-Related Decline in Physical Activity: Physical activity decreases by 40–80% with age, increasing chronic disease risk and altering stress hormone responses (Suryadinata et al., 2020).\n\nGender Differences in Endurance: Men generally have higher VO2max, while women excel in pacing, fat utilization, and fatigue resistance (Besson et al., 2022)."
+  },
+  {
+    "objectID": "projects/02-project.html#methods",
+    "href": "projects/02-project.html#methods",
+    "title": "Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations",
+    "section": "Methods",
+    "text": "Methods\n\nParticipants\n\nN = 90 healthy individuals from the Islander population\n\nBalanced by gender (45 males, 45 females) and age groups (0–25, 26–50, 51+)\n\n\n\nExperimental Design\n\nOpen-label, three-way between-subjects factorial design\n\nIndependent Variables:\n\nExercise Type: Bungee Jumping, Swimming, Light Jogging\n\nAge Group: 0–25, 26–50, 51+\n\nGender: Male, Female\n\n\nDependent Variables:\n\nChange in adrenaline, cortisol, and blood oxygen levels (post-pre)\n\n\n18 total groups (2 genders × 3 age groups × 3 activities)\n\n5 participants per group to maintain balanced design\n\n\n\nProcedure\n\nParticipants completed one of the three exercises\n\nBlood samples collected before and after exercise\n\nPhysiological changes computed for stress markers and oxygen levels\n\n\n\nSample Size Determination\n\nPower = 0.80, α = 0.05, effect size = 0.40\n\nMinimum N = 74 (G*Power)\n\nFinal N = 90 to ensure balanced groups and independence\n\n\n\nData Analysis\n\nThree-way ANOVA to assess main effects and interactions of Exercise Type, Age, and Gender\n\nPost-hoc comparisons via Tukey HSD\n\nVisual diagnostics with Residual and Q-Q plots"
+  },
+  {
+    "objectID": "projects/02-project.html#results",
+    "href": "projects/02-project.html#results",
+    "title": "Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations",
+    "section": "Results",
+    "text": "Results\n\nANOVA & MANOVA\n\nGender significantly influenced stress responses:\n\nAdrenaline change (p = 0.002)\n\nCortisol change (p = 0.036)\n\n\nAge effects were not significant\n\nAge × Gender interaction not significant\n\nBlood oxygen levels remained stable across groups\n\n\n\nPost-Hoc Analysis\n\nTukey HSD: Significant gender differences in adrenaline levels (p = 0.002)\n\nFemales exhibited higher post-swimming adrenaline, especially in age groups 0–25 and 51+\n\n\n\nDiagnostics\n\nResidual and Q-Q plots indicated model assumptions largely met\n\nNo major violations observed"
+  },
+  {
+    "objectID": "projects/02-project.html#conclusions",
+    "href": "projects/02-project.html#conclusions",
+    "title": "Project 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations",
+    "section": "Conclusions",
+    "text": "Conclusions\n\nGender is a stronger determinant of physiological stress response than age in high-exertion activities\n\nSwimming elicited higher adrenaline responses in females across age groups\n\nAge does not significantly modify cortisol, adrenaline, or oxygen response in this population\n\nHigh-intensity exercise in Islander populations highlights gender-specific adaptations in stress physiology\n\nPresentation of the project here: 101B Project"
+  },
+  {
+    "objectID": "projects/04-project.html",
+    "href": "projects/04-project.html",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "",
+    "text": "Hurricanes form over warm ocean waters when heat and moisture cause rising air, creating low pressure. As air continues to rise and rotate, storms intensify.\n\nLower central pressure → stronger winds\n\nHurricanes are ranked Category 1–5 based on sustained wind speed\n\nPredicting which storms will become major hurricanes (Category 3–5) is crucial for emergency planning and saving lives"
+  },
+  {
+    "objectID": "projects/04-project.html#introduction",
+    "href": "projects/04-project.html#introduction",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "",
+    "text": "Hurricanes form over warm ocean waters when heat and moisture cause rising air, creating low pressure. As air continues to rise and rotate, storms intensify.\n\nLower central pressure → stronger winds\n\nHurricanes are ranked Category 1–5 based on sustained wind speed\n\nPredicting which storms will become major hurricanes (Category 3–5) is crucial for emergency planning and saving lives"
+  },
+  {
+    "objectID": "projects/04-project.html#research-question",
+    "href": "projects/04-project.html#research-question",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "Research Question",
+    "text": "Research Question\nTo what extent can early meteorological measurements—wind speed, central pressure, and storm location—predict whether a tropical hurricane will intensify into a major hurricane?\n- Which variables are most significant in category prediction?"
+  },
+  {
+    "objectID": "projects/04-project.html#data-methodology",
+    "href": "projects/04-project.html#data-methodology",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "Data & Methodology",
+    "text": "Data & Methodology\n\nImportant Variables\n\nPressure: Lower central pressure indicates stronger storm\n\nWind Speed: Direct measure of intensity\n\nTrack Coordinates (latitude/longitude): Storm behavior differs by region\n\nDate: Seasonal cycles influence intensity\n\nCategory: Classification based on maximum sustained wind\n\nNaming Status: Named storms often reach higher intensity and are monitored more closely\n\n\n\nData Cleaning\n\nStarted with ~13,665 storm observations\n\nRemoved missing or impossible values (e.g., pressure = 0, wind = 0)\n\nFeature engineered:\n\ncategory from max wind\n\nregion from coordinates\n\nhemisphere from storm ID\n\n\nFinal cleaned dataset: ~12,674 observations"
+  },
+  {
+    "objectID": "projects/04-project.html#initial-exploratory-analysis",
+    "href": "projects/04-project.html#initial-exploratory-analysis",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "Initial Exploratory Analysis",
+    "text": "Initial Exploratory Analysis\n\nVisualized distributions of pressure, wind speed, and category\n\nExplored spatial patterns across latitudes and regions\n\nExamined seasonal trends in intensification"
+  },
+  {
+    "objectID": "projects/04-project.html#modeling",
+    "href": "projects/04-project.html#modeling",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "Modeling",
+    "text": "Modeling\n\nModel 1: Logistic Regression (Main Effects)\n\nPredictors: wind speed, pressure, latitude, longitude, region\n\nAIC: 12,435; AUC: 0.797\n\nThreshold 0.5: major hurricane classification ~48%, non-major ~92.7%\n\nOptimal threshold from ROC = 0.336 → balanced accuracy = 0.712\n\nKey insights: Lower pressure & higher wind early → higher odds of major hurricane\n\nLimitation: Under-predicts major hurricanes → nonlinear/interaction effects missed\n\n\n\nModel 2: Logistic Regression with Interaction Terms\n\nAdded interactions: wind × pressure, wind × latitude\n\nAIC dropped to 12,138; AUC = 0.8055\n\nOptimal threshold = 0.3091\n\nMajor hurricane classification improved from 64% → 67%\n\nBalanced accuracy = 0.731\n\nKey takeaway: Interactions capture conditional meteorological effects\n\n\n\nModel 3: Random Forest\n\nPredictors: wind speed, pressure, latitude, longitude, region\n\nMotivation: Capture nonlinear patterns & complex interactions missed by logistic regression\n\nClassification performance:\n\nMajor hurricanes: 81.8%\n\nNon-major: 85%\n\n\nAUC = 0.911 → substantial improvement over logistic regression\n\n\n\nModel 4: Random Forest with Interaction Features\n\nAdded engineered interactions from logistic regression Model 2\n\nCaptured complex conditional effects\n\nPerformance:\n\nMajor hurricanes: 76.6%\n\nNon-major: 85.8%\n\nAUC = 0.8994 (slightly lower than simpler RF)\n\n\nRF already incorporates interactions → added terms slightly redundant"
+  },
+  {
+    "objectID": "projects/04-project.html#results-analysis",
+    "href": "projects/04-project.html#results-analysis",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "Results & Analysis",
+    "text": "Results & Analysis\n\nBest performing model: Random Forest (Model 3)\n\nMost influential predictors:\n\nWind speed (high wind → higher intensification odds)\n\nCentral pressure (low pressure → higher intensification odds)\n\n\nPredictive accuracy: ~82% for major hurricanes\n\nAUC: 0.91 → model reliably separates major vs non-major hurricanes\n\nEarly meteorological measurements can predict major hurricane potential with strong confidence"
+  },
+  {
+    "objectID": "projects/04-project.html#feature-model-limitations",
+    "href": "projects/04-project.html#feature-model-limitations",
+    "title": "Project 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors",
+    "section": "Feature & Model Limitations",
+    "text": "Feature & Model Limitations\n\nSome meteorological factors (e.g., sea surface temperature, humidity) unavailable\n\nOlder storm data may be less accurate due to technological limitations\n\nClass imbalance: major hurricanes less common → potential skew in models\n\nData cleaning may introduce selection bias (removing missing/impossible values)\n\nLogistic regression struggled with nonlin\n\nPresentation of the project here: 140XP Project"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "",
+    "section": "",
+    "text": "Title\n\n\n\n\n\n\n\n\nProject 1 – Predicting Global Healthy Life Expectancy\n\n\n\n\n\n\nProject 2 – The Effects of Age, Gender, and Exercise Type on Physiological Stress Markers in Islander Populations\n\n\n\n\n\n\nProject 3 – Predicting Skin Cancer Status\n\n\n\n\n\n\nProject 4 – Predicting Hurricane Behavior: Meteorological, Spatial, and Temporal Predictors\n\n\n\n\n\n\nNo matching items"
   }
 ]

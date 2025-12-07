@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 1</title>
+<title>Project 1 – Predicting Global Healthy Life Expectancy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -108,15 +108,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 1</h1>
+<h1 class="title">Project 1 – Predicting Global Healthy Life Expectancy</h1>
 </div>
 
 
@@ -133,8 +131,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
+<p>This project develops a statistical modeling framework to quantify how key socioeconomic and well-being indicators influence healthy life expectancy across countries. Using international data from the Gallup World Poll, sourced through the <em>World Happiness Report</em> (143 observations), the analysis investigates whether happiness levels, economic conditions, and perceived government corruption can serve as reliable predictors of population health outcomes.</p>
+</section>
+<section id="technical-approach" class="level2">
+<h2 class="anchored" data-anchor-id="technical-approach">Technical Approach</h2>
+<p>We implemented a multiple linear regression framework to model <strong>healthy life expectancy</strong> as a function of three predictors:</p>
+<ul>
+<li><strong>Happiness Score</strong> (1–10)<br>
+</li>
+<li><strong>Economic Well-Being</strong> (GDP per capita index)<br>
+</li>
+<li><strong>Perceptions of Corruption</strong> (public trust metric)</li>
+</ul>
+<p>Initial exploratory analysis showed positive correlations between life expectancy and both happiness and GDP per capita, while corruption showed no meaningful linear relationship. Skewness and several influential observations motivated a transformation-based modeling approach.</p>
+<p>To address violations of normality and heteroscedasticity, we applied <strong>Box–Cox power transformations</strong> to the response and predictors. Model diagnostics indicated that individualized transformations significantly improved fit. Variable-selection procedures (Adjusted R², AIC/AICc, BIC, and added-variable plots) identified <strong>perceptions of corruption</strong> as a non-significant predictor and it was removed from the final specification.</p>
+</section>
+<section id="final-model" class="level2">
+<h2 class="anchored" data-anchor-id="final-model">Final Model</h2>
+<p>The optimized model estimates transformed healthy life expectancy as a function of transformed GDP per capita and happiness score:</p>
+<p>[ ()^{1.43} = -0.0087 + 0.235 ()^2 + 0.038 ()^2 ]</p>
+<p>The final model explains 72.35% of the variance in healthy life expectancy ((R^2 = 0.7235)) and is statistically significant (ANOVA (p &lt; 0.05)). Both remaining predictors show strong statistical significance and positive effects.</p>
+</section>
+<section id="key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings">Key Findings</h2>
+<ul>
+<li>Economic prosperity and subjective well-being are strong, quantifiable drivers of healthy life expectancy.<br>
+</li>
+<li>Perceived corruption does not meaningfully predict life expectancy within this dataset.<br>
+</li>
+<li>The results highlight potential policy levers — improvements in economic conditions and well-being metrics may translate into measurable health gains.</li>
+</ul>
+</section>
+<section id="limitations-future-work" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-future-work">Limitations &amp; Future Work</h2>
+<ul>
+<li>The study notes potential omitted-variable bias, sensitivity to outliers, and limited generalizability due to the concentration of upper-middle-income countries in the dataset.<br>
+</li>
+<li>Future extensions include expanding the feature set, applying the model to additional years, and validating performance across more diverse global populations.</li>
+</ul>
+<p>Presentation of the project here: <a href="../101Aproject.pdf">101A Project</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

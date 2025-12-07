@@ -1,0 +1,108 @@
+---
+title: "Project 3 -- Predicting Skin Cancer Status"
+format: html
+toc: false
+---
+
+
+## Introduction
+
+Skin cancer is the most common cancer in the United States, affecting millions each year:
+
+- 1 in 5 Americans will develop skin cancer by age 70  
+- Over 2 people die every hour from skin cancer in the U.S.  
+- Early detection of melanoma greatly increases survival  
+- Risk assessment is challenging manually; machine learning can improve prediction by detecting complex patterns in data  
+
+
+## Data & Cleaning
+
+- **Training data:** 50,000 rows, 50 columns  
+- **Testing data:** 20,000 rows, 49 predictors  
+- **Cancer distribution (training):** Benign 47.7%, Malignant 52.3%  
+- **Baseline accuracy:** 52.26%  
+- **Predictor types:** 49 predictors: 18 numeric, 31 categorical (some numeric represent categories, e.g., outdoor_job, zip_code_last_digit)  
+
+### Missing Data
+
+- Training: 196,042 missing values (7.84%)  
+- Testing: 78,256 missing values (7.99%)  
+- Missingness spread evenly; no predictor >10% missing  
+- Imputation methods compared: missForest, MICE, median/mode replacement  
+
+## Methodology
+
+- Explored multiple approaches: LASSO, Elastic Net, stepwise regression, subset selection  
+- Multiple imputation methods tested for missing data  
+- **Median-mode imputation** selected for final model due to stability  
+- Focused on statistically significant predictors for final model  
+
+## Models
+
+### Random Forest
+
+**Full model:**  
+- Used all 49 predictors  
+- Training confusion matrix showed Benign error 51%, Malignant error 33%  
+- Tended to classify Malignant better than Benign  
+- Kaggle testing accuracy: 59.835%  
+
+**Reduced 15-predictor model:**  
+- Selected top 15 important predictors  
+- Training confusion matrix: Benign error 55%, Malignant error 35%  
+- Performance worse than full model  
+- Important features included Age, UV exposure, and Occupation  
+
+### Gradient Boosting Machine (GBM)
+
+- Bernoulli loss for binary classification  
+- Hyperparameters tuned:  
+  - # of trees: 8,000  
+  - Interaction depth: 5  
+  - Shrinkage: 0.005  
+  - Min observations per node: 10  
+  - Subsample: 1.0  
+- 10-fold CV to select optimal # of trees (~2042 trees)  
+- Training accuracy: ~60.415% on Kaggle  
+- Observed overfitting when too many trees were used  
+
+### Final Model – Logistic Regression
+
+- Selected statistically significant predictors (18 total):  
+  - **Demographics/Environment:** Age, Urban_Rural, Years_Lived_At_Address, Skin_Tone  
+  - **Behavioral/Protective:** Hat_Use, Tanning_Bed_Use, Clothing_Protection, Sun_Burns_Last_Year  
+  - **Medical Risk Factors:** Family_History, Immunosuppressed, Skin_Photosensitivity  
+  - **Lesion-specific:** Lesion_Location, Number_Of_Lesions  
+  - **Misc:** Music_Genre  
+- Training accuracy: 60.76%  
+- Kaggle testing accuracy: 60.545%  
+
+## Results / Limitations
+
+- Logistic regression improved baseline by ~8%  
+- **Advantages:** Simplicity, interpretability, moderate accuracy  
+- **Limitations:**  
+  - Median/mode imputation may introduce bias  
+  - GBM and Random Forest are computationally expensive  
+  - Models may overfit if not properly tuned  
+  - Logistic regression struggles with non-linear relationships and multicollinearity  
+  - Random seed and train/test split affect reproducibility  
+  - Some predictors may appear insignificant due to modeling choices  
+
+## Discussion
+
+- Real-world application: Current models are not clinically reliable (<70% accuracy)  
+- Dermatology screening tools achieve >90% accuracy  
+- Logistic regression selected as final model for interpretability  
+- Random Forest and GBM slightly worse or similar in performance, more complex to interpret  
+- Provides baseline for future research, feature engineering, and model tuning  
+
+## Conclusion
+
+- Best model accuracy: ~60.545%  
+- Logistic regression with 18 significant predictors chosen for final model  
+- Model simplicity and interpretability are key advantages  
+- Further improvements require richer clinical data, imaging, and medically informed predictors  
+- Serves as a solid baseline for future predictive modeling in skin cancer research  
+
+Presentation of the project here: [101C Project](/101Cproject.pdf)
