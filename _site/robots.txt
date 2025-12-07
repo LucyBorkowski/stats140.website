@@ -1,1 +1,1 @@
-Sitemap: https://animated-hamster-2d7ff0.netlify.app/sitemap.xml
+Sitemap: https://lucyborkowski.netlify.app/sitemap.xml
